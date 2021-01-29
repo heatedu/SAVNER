@@ -1,2 +1,2 @@
 # SAVNER
-A webapp which helps in supplying the rare blood groups in emergency
+A webapp which helps in supplying the rare blood groups in case of emergency 
