@@ -22,7 +22,7 @@ app.use(
 );
 const { check, validationResult } = require('express-validator')
 
-mongoose.connect("mongodb://localhost:27017/usersDB", {
+mongoose.connect("mongodb+srv://sammy:Samarth1@savner.7d7k3.mongodb.net/users", {
   useNewUrlParser: true,
     useUnifiedTopology: true
 });
