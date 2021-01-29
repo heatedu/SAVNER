@@ -12,6 +12,9 @@
   },
   "author": "",
   "license": "ISC",
+  "engines":{
+    "node":"14.15.1"
+  },
   "bugs": {
     "url": "https://github.com/heatedu/Project1/issues"
   },
