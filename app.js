@@ -277,6 +277,16 @@ app.get("/find", function(req, res){
   res.render("find");
 });
 
+
+app.post("/about", function(req, res){
+  const tname=req.body.txtName;
+  const tmail=req.body.txtEmail;
+  const tphn=req.body.txtPhone;
+  const tmsg=req.body.txtMsg;
+  res.render("thanks");
+});
+
+
 app.post("/find",function(req,res){
     const bgrp=req.body.groups;
     const reqcity=req.body.hospital_city;
@@ -343,7 +353,6 @@ app.post("/helper", function(req, res){
 app.get("/negative", function(req, res){
   res.render("negative");
 });
-
 
 
 
