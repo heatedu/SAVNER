@@ -1,0 +1,514 @@
+<%- include('partials/header') %>
+
+		<!---Title section--->
+	<section id="title">
+	<div class="container-fluid">
+	    <!-- Nav Bar -->
+	<nav class="navbar fixed-top navbar-expand-lg  navbar-dark bg-danger">
+	<a class="navbar-brand"> <img class="logo" src="homepage/newlogo.jpg" alt="logo"></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Togglenavigation">
+	<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse  " id="navbarTogglerDemo02">
+	<ul class="navbar-nav ml-auto ">
+	   <li class="nav-item">
+	   <a class="nav-link" href="#">Home</a>
+	  </li>
+	 <!--- <li class="nav-item">
+	   <a class="nav-link" href="#">About us</a>
+	  </li>--->
+	  <li class="nav-item">
+	   <a class="nav-link" href="#registration">Search Donors</a>
+	  </li>
+	  <li class="nav-item">
+	   <a class="nav-link" href="#registration">Request Blood</a>
+	  </li>
+	  <li class="nav-item">
+	   <a class="nav-link" href="/about">Know us Better</a>
+    </li>
+    <% if(isAuthenticated){ %>
+    <li class="nav-item">
+      <a class="nav-link" href="/logout">Logout</a>
+      <!-- <form action="/logout" method="post">
+        <button type="submit">Logout</button>
+      </form> -->
+     </li>
+    <%}%>
+    <% if(!isAuthenticated){ %>
+		<li class="nav-item">
+	   <a class="nav-link" href="/login">Login</a>
+	  </li>
+	  <li class="nav-item">
+	   <a class="nav-link" href="/register1">Register</a>
+    </li>
+    
+    <% }%>
+		<!-- <li class="nav-item">
+	   <a class="nav-link" href="/find">FindDonor</a>
+	  </li> -->
+  </ul>
+  </div>
+  </nav>
+  
+</div>
+</section>
+
+<!---slideshow 1--->
+<section id="video-player">
+			<!-- Large and Medium -->
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			  <!-- Wrapper for slides -->
+			  <div class="carousel-inner">
+
+				<div class="carousel-item active">
+				<center>
+				  <img class="carousel-image" src="homepage/1.jpg" alt="Will you save lives too? Be a Blood Donor">
+				</center>
+				</div>
+
+				<div class="carousel-item">
+				<center>
+				  <img class="carousel-image" src="homepage/2.jpg" alt="Will you save lives too? Be a Blood Donor">
+				</center>
+				</div>
+
+				<div class="carousel-item">
+				<center>
+				  <img class="carousel-image" src="homepage/3.png" alt="pic3">
+				</center>
+				</div>
+
+               <!-- <div class="carousel-item">
+				<center>
+				  <img class="carousel-image" src=" " alt="pic4">
+				</center>
+				</div>
+
+				<div class="carousel-item">
+				<center>
+				  <img class="carousel-image" src="" alt="pic5">
+				</center>
+				</div> -->
+
+			  </div>
+
+              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+              </a>
+
+			</div>
+		</section>
+<!---information part--->
+
+	<section id="information">
+	<div class="container">
+    <div class="section-title">
+    	<center>
+      <h3>Welcome to the our website of  Blood Transfusion.</h3>
+      <p style="margin-top:2rem">
+        We help people in finding the blood groups which are very difficult to find in hard times.We helps in providing the needy the contact of the person as nearby as possible which matches to the same blood group  and is willing to donate.
+      </p>
+  </center>
+  </div>
+</div>
+</section>
+<!-- Load font awesome icons -->
+
+
+<!-- The social media icon bar -->
+<!--
+<div class="icon-bar">
+  <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+  <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+  <a href="#" class="google"><i class="fa fa-google"></i></a>
+  <a href="#" class="phone"><i class="fas fa-phone"></i></a>
+-->
+</div>
+<section id="registration">
+	<center><h1 style="padding-top:3rem">JOIN US</h1>
+	<p> Help us in serving people. You can contribute by donating blood. Also if you are in need of blood, you can always avail our services.</p></center>
+	<div class="row" style="margin-top:5rem">
+	<div class="col-sm-6 col-lg-3 offset-sm-3 offset-lg-2">
+  <div class="register">
+        <center>
+        <img src="homepage/register-donor.png" alt="donor registration">
+        <h6 style="padding:10px"> Join our community to help the people in need. Your blood can help save many lives.</h6>
+        <form method="get" 
+        <% if(isAuthenticated){ %>
+          action="/thanks"
+         <% }else{ %>
+          action="/login"
+        <% }%>
+        >
+				<h6 style="color:red; font-weight:550;">If you have donated within 8 weeks pls wait till eight weeks</h6>
+          <button style="margin-bottom: 10px;" type="submit" class="btn btn-danger">Become a donor</button>
+        </form>
+     </center>
+  </div>
+</div>
+<div class="col-sm-6 col-lg-3 offset-sm-3 offset-lg-2">
+   <div class="register">
+        <center>
+        <img src="homepage/help.png" alt="donor registration">
+        <h6 > In the need of blood? Don't panic. We can help you find a donor. </h6>
+        <h6 style="padding:10px">Just fill the necessary details</h6>
+          <form method="get" 
+          <% if(isAuthenticated){ %>
+          action="/find"
+         <% }else{ %>
+          action="/login"
+        <% }%>
+         >
+         <button type="submit" class="btn btn-danger">Find a donor</button>
+				   </form>
+     </center>
+ </div>
+</div>
+</div>
+<div style="margin-bottom:40px">
+<center>
+  <h4 style="padding-top:30px; font-weight:540px"> Have you or any of your relative got a second life through us?</h4>
+  <h5 style="padding-bottom:20px"> If YES!!!  then please let us know by clicking YES</h5>
+  <form method="get" 
+  <% if(isAuthenticated){ %>
+  action="/helper"
+ <% }else{ %>
+  action="/login"
+<% }%>
+ >
+ <button style="margin-bottom: 10px;" type="submit" class="btn btn-danger">YES</button>
+   </form>
+  
+</center>
+
+</div>
+</section>
+
+   <!--
+    <div class="container">
+<div class="row">
+  <div class="col-sm-6 ">
+<div class="card text-white bg-danger mb-3" style="max-width:30rem;">
+
+<img class="card-img-top" src="C:\Users\Lenovo\Documents\GitHub\Project1\static\img\homepage\7.png" alt="Card image cap" >
+  <div class="card-header">Header</div>
+  <div class="card-body">
+    <h5 class="card-title">Warning card title</h5>
+    <p class="card-text"> Seen you eyes son show. Far two unaffected one alteration apartments celebrated but middletons interested. Described deficient applauded consisted my me do. Passed edward two talent effect seemed engage six. On ye great do child sorry lived. Proceed cottage far letters ashamed get clothes day. Stairs regret at if matter to. On as needed almost at basket remain. By improved sensible servants children striking in surprise. </p>
+  </div>
+</div>
+</div>
+<div class="col-sm-6">
+<div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+  <div class="card-header">Header</div>
+  <div class="card-body">
+    <h5 class="card-title">Warning card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+</div>
+<div class="col-sm-6">
+<div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+  <div class="card-header">Header</div>
+  <div class="card-body">
+    <h5 class="card-title">Warning card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+</div>
+<div class="col-sm-6">
+<div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+  <div class="card-header">Header</div>
+  <div class="card-body">
+    <h5 class="card-title">Warning card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+</div>
+
+
+    </div>
+--->
+<hr size=3 >
+<section id="feedbacks">
+	<header style="margin-top:5rem;">
+		<center>
+		<h1>Lives Saved</h1>
+		<h5> We have helped save more than 100 lives till now and still counting.</h5>
+         <h6>Precious feedback from some benefitors</h6>
+     </center>
+ </header>
+ <div class="row" style="margin-top:3rem; margin-bottom:20px">
+ 	<div class="col-sm-6 col-lg-4 offset-sm-3 offset-lg-3">
+<div class="flip-card">
+  <div class="flip-card-inner ">
+    <div class="flip-card-front">
+      <img src="homepage/woamn4.jpg" alt="Avatar" style="width:250px;height:250px;">
+    </div>
+    <div class="flip-card-back bg-danger">
+
+      <!-- <h5 style="margin-top:40px">I'm alive today thanks to the donors who gave me blood.</h5> -->
+      <h5 style="padding:20px 20px">Having a baby should be one of life's most joyous experiences. I lost so much blood during delivery that it took many bags of blood before I finally pulled through. Thanks to blood donors, my son has a mom.</h5>
+     
+    </div>
+  </div>
+</div>
+</div>
+<div class="col-sm-6 col-lg-5 offset-sm-3 offset-lg-0">
+<div class="flip-card">
+  <div class="flip-card-inner ">
+    <div class="flip-card-front">
+      <img src="homepage/man1.jpg" alt="Avatar" style="width:250px;height:250px;">
+    </div>
+    <div class="flip-card-back bg-danger">
+
+      <!-- <h5 style="margin-top:40px">I'm alive today thanks to the donors who gave me blood.</h5> -->
+      <h5 style="padding:20px 20px">When I was younger, I had Acute Lymphoblastic Leukaemia and needed chemotherapy and blood transfusions regularly .  I'm very thankful for the countless blood donors who saved my life.</h5>
+      
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<div class="row" style="margin-top:5rem; margin-bottom:80px">
+<div class="col-sm-6 col-lg-4 offset-sm-3 offset-lg-3">
+<div class="flip-card">
+  <div class="flip-card-inner ">
+    <div class="flip-card-front">
+      <img src="homepage/man2.jpg" alt="Avatar" style="width:250px;height:250px;">
+    </div>
+    <div class="flip-card-back bg-danger">
+
+      <!-- <h5 style="margin-top:40px">I'm alive today thanks to the donors who gave me blood.</h5> -->
+      <h5 style="padding:20px 20px">I was born with anaemia, which means I need blood transfusions on a regular basis.But my life would be very different if it wasn't for the commitment of regular blood donors. Thanks to them, I'm able to live the life I want.</h5>
+     
+    </div>
+  </div>
+</div>
+</div>
+<div class="col-sm-6 col-lg-5 offset-sm-3 offset-lg-0">
+<div class="flip-card">
+  <div class="flip-card-inner ">
+    <div class="flip-card-front">
+      <img src="homepage/woman2.png" alt="Avatar" style="width:250px;height:250px;">
+    </div>
+    <div class="flip-card-back bg-danger">
+
+      <!-- <h5 style="margin-top:40px">I'm alive today thanks to the donors who gave me blood.</h5> -->
+      <h5 style="padding:20px 20px">As a child, I learnt the importance of blood donation when my mother needed blood .Later, when I had my heart bypass surgery, it was reassuring to know I could rely on dedicated blood donors.Thanks to them</h5>
+      
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+</section>
+<hr size=3>
+<section class="faq-section" style="margin-top:5rem;">
+          <div class="container">
+            <div class="row">
+                    <!-- ***** FAQ Start ***** -->
+                    <div class="col-md-6 offset-md-3">
+
+                        <div class="faq-title text-center pb-3">
+                            <h2>FAQ</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-6 offset-md-3">
+                        <div class="faq" id="accordion">
+
+                            <div class="card">
+                                <div class="card-header" id="faqHeading-1">
+                                    <div class="mb-0">
+                                        <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-1" data-aria-expanded="true" data-aria-controls="faqCollapse-1">
+                                            <span class="badge">1</span> Who can donate blood?
+                                        </h5>
+                                    </div>
+                                </div>
+                                <div id="faqCollapse-1" class="collapse" aria-labelledby="faqHeading-1" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <p>In most states, donors must be age 17 or older. Some states allow donation by 16-year-olds with a signed parental consent form. Donors must weigh at least 110 pounds and be in good health. Additional eligibility criteria apply.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="card">
+                                <div class="card-header" id="faqHeading-2">
+                                    <div class="mb-0">
+                                        <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-2" data-aria-expanded="false" data-aria-controls="faqCollapse-2">
+                                            <span class="badge">2</span> How often can I donate blood?
+                                        </h5>
+                                    </div>
+                                </div>
+                                <div id="faqCollapse-2" class="collapse" aria-labelledby="faqHeading-2" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <p>You must wait at least eight weeks (56 days) between donations of whole blood and 16 weeks (112 days) between Power Red donations. Platelet apheresis donors may give every 7 days up to 24 times per year. Regulations are different for those giving blood for themselves (autologous donors).</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="card">
+                                <div class="card-header" id="faqHeading-3">
+                                    <div class="mb-0">
+                                        <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-3" data-aria-expanded="false" data-aria-controls="faqCollapse-3">
+                                            <span class="badge">3</span>Why does we ask so many personal questions when I give blood?
+                                        </h5>
+                                    </div>
+                                </div>
+                                <div id="faqCollapse-3" class="collapse" aria-labelledby="faqHeading-3" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <p>Our highest priorities are the safety of the blood supply and our blood donors. Some individuals may be at risk of transferring communicable disease through blood donation due to exposure via travel or other activities or may encounter problems with blood donation due to their health. We ask these questions to ensure that it is safe for patients to receive your blood and to ensure that it is safe for you to donate blood that day.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="card">
+                                <div class="card-header" id="faqHeading-4">
+                                    <div class="mb-0">
+                                        <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-4" data-aria-expanded="false" data-aria-controls="faqCollapse-4">
+                                            <span class="badge">4</span> How long will it take to replenish the pint of blood I donate?
+                                        </h5>
+                                    </div>
+                                </div>
+                                <div id="faqCollapse-4" class="collapse" aria-labelledby="faqHeading-4" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <p>The plasma from your donation is replaced within about 24 hours. Red cells need about four to six weeks for complete replacement. That’s why at least eight weeks are required between whole blood donations.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="card">
+                                <div class="card-header" id="faqHeading-5">
+                                    <div class="mb-0">
+                                        <h5 class="faq-title" data-toggle="collapse" data-target="#faqCollapse-5" data-aria-expanded="false" data-aria-controls="faqCollapse-5">
+                                            <span class="badge">5</span> How long does a blood donation take?
+                                        </h5>
+                                    </div>
+                                </div>
+                                <div id="faqCollapse-5" class="collapse" aria-labelledby="faqHeading-5" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <p>The entire process takes about one hour and 15 minutes; the actual donation of a pint of whole blood unit takes eight to 10 minutes. However, the time varies slightly with each person depending on several factors including the donor’s health history and attendance at the blood drive.<p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+
+
+</section>
+
+ <header>
+            <div class="our-team">
+            <center>
+                    <h2 class="title">Our Team</h2>
+            </center>
+            </div>
+        </header>
+ <section id="cards-mentor">
+    <div class="mentor-container">
+
+
+        <div class="card">
+          <div class="imgBx">
+            <img src="homepage/v.jpg" alt="vidushi">
+          </div>
+          <div class="content">
+            <div>
+                <h5>Vidushi Tickoo</h5>
+                <h6>B.Tech CE</h6>
+                <h6>3rd year</h6>
+                <div class="links">
+                <a href="https://github.com/v03012000" target="_blank"><img class="git-linkedin" src="homepage/github-logo.svg" style="margin:0px 4px;"></a>
+                <a href="https://www.linkedin.com/in/v03012000/" target="_blank"><img class="git-linkedin"  src="homepage/linkedin.svg" style="margin: 0 4px;"></a>
+                </div>
+            </div>
+          </div>
+        </div>
+         <div class="card">
+          <div class="imgBx">
+            <img src="homepage/samarth.jpg" alt="samarth">
+          </div>
+          <div class="content">
+            <div>
+                <h5>Samarth Gupta</h5>
+                <h6>B.Tech CE</h6>
+                <h6>3rd year</h6>
+                <div class="links">
+                <a href="https://github.com/heatedu" target="_blank"><img class="git-linkedin" src="homepage/github-logo.svg" style="margin:0px 4px;"></a>
+                <a href="https://www.linkedin.com/in/samarth-gupta-0209/" target="_blank"><img class="git-linkedin"  src="homepage/linkedin.svg" style="margin: 0 4px;"></a>
+                </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    </section>
+
+  <!-- Site footer -->
+    <footer class="site-footer">
+      <!-- <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h6>About</h6>
+            <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Categories</h6>
+            <ul class="footer-links">
+              <li><a href="http://scanfcode.com/category/c-language/">C</a></li>
+              <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
+              <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
+              <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
+              <li><a href="http://scanfcode.com/category/android/">Android</a></li>
+              <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
+            </ul>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Quick Links</h6>
+            <ul class="footer-links">
+              <li><a href="http://scanfcode.com/about/">About Us</a></li>
+              <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
+              <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
+              <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
+              <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr>
+      </div> -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by
+         <a href="#">Savner</a> YMCA.
+            </p>
+          </div>
+        </div>
+      </div>
+</footer>
+
+</body>
+
+</html>

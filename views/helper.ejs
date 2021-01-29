@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Details of Donor</title>
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+        <link rel = "stylesheet" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src = "https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="css/r.css">
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+<body style="background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);">
+ 
+    <div class="main">
+        <section class="register">
+          <div class="container">
+            <div class="signin-content">
+              <div class="signin-form">
+                <h2 class="form-title">Please fill the details of the donor which helped you. </h2>
+      
+             <!--  <% if(typeof alert != 'undefined') { %>
+                <% alert.forEach(function(itr) { %>-->
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+               <!---  <%= itr.msg %>-->
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                  </button>
+                </div>
+               <!--- <% }) %>
+                <% } %>-->
+      
+      
+                <form action="/helper" method="POST" class="register-form" id="login-form">
+                  <div class="form-group">
+                    <label for="your_name"></label>
+                    <input type="text" name="your_name" id="your_name" placeholder="Donor's Name" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="email"></label>
+                    <input type="email" name="email" id="email" placeholder="Donor's Email" required />
+                  </div>
+                  <div class="form-group">
+                                  <label for="phone"></label>
+                                  <input type="tel" id="phone" name="phone" placeholder="Donor's Phone Number without 0" pattern="[1-9]{1}[0-9]{9}">
+                                  </div>
+                  <div class="row" style="margin-bottom: 2px">
+           
+                   
+                    <div class="form-group col-lg-5">
+                      <label for="city">
+                        <!--<img src="../public/register/city.svg" alt="city">-->
+                      </label>
+                      <input type="text" name="city" id="city" placeholder="Donor's City" required />
+                    </div>
+      
+                    <div class="form-group col-lg-7">
+                      <label for="blood group"></label>
+                      
+                      <input type="text" name="b_group" id="b_group" placeholder="Blood Group" required />
+                    </div>
+                  </div>
+                  
+      
+                  <!-- <div class="form-group">
+                    <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                    <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in <a href="#" class="term-service">Terms of service</a></label>
+                  </div> -->
+                  <div class="form-group form-button">
+                    <input class="btn btn-danger" type="submit" value="Submit">
+                    <!-- <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>-->
+                  </div>
+      
+      
+                </form>
+              </div>
+              <div class="signup-image" style="padding-top: 50px">
+                <figure><img src="register/register.jpg" alt="register"></figure>
+                
+              </div>
+            </div>
+      
+          </div>
+        </section>
+      </div> 
+
+
+
+
+
+</body>
+</html>

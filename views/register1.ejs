@@ -1,0 +1,100 @@
+<%- include('partials/registerheader') %>
+
+<div class="main">
+  <section class="register">
+    <div class="container">
+      <div class="signin-content">
+        <div class="signin-form">
+          <h2 class="form-title">Sign Up</h2>
+
+          <% if(typeof alert != 'undefined') { %>
+          <% alert.forEach(function(itr) { %>
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <%= itr.msg %>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <% }) %>
+          <% } %>
+
+
+          <form action="/register1" method="POST" class="register-form" id="login-form">
+            <div class="form-group">
+              <label for="your_name"><img src="register/account.svg" alt="account"></label>
+              <input type="text" name="your_name" id="your_name" placeholder="Your Name" required />
+            </div>
+            <div class="form-group">
+              <label for="email"><img src="register/email.svg" alt="email"></label>
+              <input type="email" name="email" id="email" placeholder="Your Email" required />
+            </div>
+            <div class="form-group">
+                            <label for="phone"><img src="register/phone.svg" alt="phone"></label>
+                            <input type="tel" id="phone" name="phone" placeholder="Your Phone Number without 0" pattern="[1-9]{1}[0-9]{9}">
+                            </div>
+            <div class="row" style="margin-bottom: 2px">
+              <div class="form-group col-lg-6">
+
+                <label for="country">
+                  <!--<img src="../public/register/india.svg" alt="country">-->
+                </label>
+                <input type="text" name="country" id="country" placeholder="Country" required />
+              </div>
+              <div class="form-group col-lg-6">
+                <label for="state">
+                  <!--<img src="../public/register/house.svg" alt="state">-->
+                </label>
+                <input type="text" name="state" id="state" placeholder="State" required />
+              </div>
+              <div class="form-group col-lg-5">
+                <label for="city">
+                  <!--<img src="../public/register/city.svg" alt="city">-->
+                </label>
+                <input type="text" name="city" id="city" placeholder="City" required />
+              </div>
+
+              <div class="form-group col-lg-7">
+                <label for="blood group"><img src="register/blood.svg" alt="blood"></label>
+                <!-- <select name="b_group" id="groups" style="margin-top:20px display:inline ">
+                  <option value="A+">A+</option>
+                  <option value="A-">A-</option>
+                  <option value="B+">B+</option>
+                  <option value="B-">B-</option>
+                  <option value="AB+">AB+</option>
+                  <option value="AB-">AB-</option>
+                  <option value="O+">O+</option>
+                  <option value="O-">O-</option>
+                  <option value="OH+">OH+</option>
+                </select> -->
+                <input type="text" name="b_group" id="b_group" placeholder="Blood Group" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="your_pass"><img src="register/lock.svg" alt="lock"></label>
+              <input type="password" name="your_pass" id="your_pass" placeholder="Password" required />
+            </div>
+
+            <!-- <div class="form-group">
+              <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+              <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in <a href="#" class="term-service">Terms of service</a></label>
+            </div> -->
+            <div class="form-group form-button">
+              <input class="btn btn-danger" type="submit" value="Register">
+              <!-- <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>-->
+            </div>
+
+
+          </form>
+        </div>
+        <div class="signup-image" style="padding-top: 50px">
+          <figure><img src="register/register.jpg" alt="register"></figure>
+          <a href="/login" class="signup-image-link">I am already member</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+</body>
+
+</html>

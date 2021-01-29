@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Results</title>
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+        <link rel = "stylesheet" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src = "https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="css/results.css">
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+<body style="background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);">
+ 
+    <center>
+
+<h2  style="padding-top:80px;padding-bottom:40px">Here is a list of prospective donors </h2>   
+    <table class="styled-table" >
+        <thead>
+         
+            <tr>
+                <th>Name</th>
+                <th>Mail</th>
+                <th>City</th>
+                <th>Phone No</th>
+                <th>Blood Group</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%  resultarray.forEach(function(itr1){ %>
+            <tr>
+                <td><%=itr1.name %></td>
+                <td><%=itr1.mail %></td>
+                <td><%=itr1.city%></td>
+                <td><%=itr1.phone%></td>
+                <td><%=itr1.group%></td>
+            </tr>
+            <%   }) ; %>
+        </tbody>
+    </table>
+    </center>
+
+    <center>
+      <p>
+        Having trouble? <a href="/about#form">Contact us</a>
+      </p>
+      <p class="lead">
+        <a class="btn btn-primary btn-sm" href="/" role="button">Continue to homepage</a>
+      </p>
+    </center>
+   
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>results</title>
+  </head>
+  <body>
+    <% if(resultarray.length>0){ %>
+    <%  resultarray.forEach(function(itr1){ %>
+      <tr>
+        <td><%=itr1.name%></td>;
+        <td><%=itr1.mail%></td>;
+        <td><%=itr1.city%></td>;
+        <td><%=itr1.phone%></td>;
+       <td><%=itr1.group%></td>;
+      </tr>
+         
+  <%   }) ; %>
+    <% } %>
+  
+    
+
+  </body>
+</html> -->
