@@ -264,7 +264,6 @@ bcrypt.hash(req.body.your_pass, saltRounds, function(err, hash) {
           });
         }
         else{
-          console.log("Fuck u asshole go to login");
           res.render("login");
         }
       });
